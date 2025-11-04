@@ -27,8 +27,6 @@ public class FuncionarioTest{
         assertEquals(660.0, funcionario.getIRPF(), 0.01);
         assertEquals(7115.0, funcionario.getSalarioLiquido(), 0.01);
     }
-    //faça um teste para quando for 2k
-
     @Test
     void salarioLiquidoTeste2k(){
         // O objetivo deste teste é verificar quando o salário bruto for
@@ -42,7 +40,7 @@ public class FuncionarioTest{
         assertEquals(0.0, funcionario.getIRPF(), 0.01);
         assertEquals(1910.0, funcionario.getSalarioLiquido(), 0.01);
     }
-    
+
     @Test
     void setSalarioBrutoNegativoLancaException(){
         // Verifica que setSalarioBruto lança IllegalArgumentException quando o valor é negativo

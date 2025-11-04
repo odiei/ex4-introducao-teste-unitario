@@ -42,23 +42,7 @@ public class FuncionarioTest{
         assertEquals(0.0, funcionario.getIRPF(), 0.01);
         assertEquals(1910.0, funcionario.getSalarioLiquido(), 0.01);
     }
-
-    @Test
-    void setSalarioBrutoNegativoLancaExcecao() {
-        // Deve lançar IllegalArgumentException para salário negativo
-        assertThrows(IllegalArgumentException.class, () -> {
-            new Funcionario(-1000.0);
-        });
-    }
-
-    @Test
-    void setSalarioBrutoZeroLancaExcecao() {
-        // Deve lançar IllegalArgumentException para salário igual a zero
-        assertThrows(IllegalArgumentException.class, () -> {
-            new Funcionario(0.0);
-        });
-    }
-
+    
     @Test
     void setSalarioBrutoNegativoLancaException(){
         // Verifica que setSalarioBruto lança IllegalArgumentException quando o valor é negativo

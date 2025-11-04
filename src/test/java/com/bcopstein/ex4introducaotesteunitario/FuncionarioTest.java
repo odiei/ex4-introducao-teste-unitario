@@ -64,5 +64,5 @@ public class FuncionarioTest{
         assertEquals(0.0, funcionario.getIRPF(), 0.01);
         assertEquals(0.0, funcionario.getSalarioLiquido(), 0.01);
     }
-
+    //todos esses testes passaram sem nenhum erro
 }

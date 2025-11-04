@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class FuncionarioTest{
     @Test
-    void salarioLiquidoTesteMaior5ke2k(){
+    void salarioLiquidoMaior5ke2k(){
 
         //O objetivo desse teste é verificar quando o salário bruto for
         //maior que 5k (limite do INSS) e maior que 2k500 (começa a pagar IR)
@@ -28,7 +28,7 @@ public class FuncionarioTest{
         assertEquals(7115.0, funcionario.getSalarioLiquido(), 0.01);
     }
     @Test
-    void salarioLiquidoTeste2k(){
+    void salarioLiquido2k(){
         // O objetivo deste teste é verificar quando o salário bruto for
         // 2k (não deve pagar IRPF, deve pagar INSS sobre o salário inteiro)
         // Salário: R$ 2000,00
@@ -42,10 +42,16 @@ public class FuncionarioTest{
     }
 
     @Test
-    void setSalarioBrutoNegativoLancaException(){
+    void setSalarioBrutoNegativo(){
         // Verifica que setSalarioBruto lança IllegalArgumentException quando o valor é negativo
         Funcionario funcionario = new Funcionario(1000.0);
         assertThrows(IllegalArgumentException.class, () -> funcionario.setSalarioBruto(-500.0));
+    }
+
+    @Test
+    void construtorComSalarioNegativo(){
+        // Verifica que o construtor lança IllegalArgumentException quando o salário inicial for negativo
+        assertThrows(IllegalArgumentException.class, () -> new Funcionario(-1000.0));
     }
 
     @Test

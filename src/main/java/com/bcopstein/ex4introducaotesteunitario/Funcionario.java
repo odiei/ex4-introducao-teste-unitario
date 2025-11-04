@@ -15,6 +15,9 @@ public class Funcionario {
     private double salarioBruto;
 
     public Funcionario(double salarioBruto){
+                if (salarioBruto < 0.0){
+            throw new IllegalArgumentException("Salario Negativo");
+        }
         this.setSalarioBruto(salarioBruto);
     }
 

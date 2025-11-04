@@ -1,4 +1,5 @@
-package com.bcopstein;
+package com.bcopstein.ex4introducaotesteunitario;
+
 /*
 Para calcular o salário líquido de um funcionário deve-se descontar
 o INSS e o imposto de renda do seu salário bruto. O desconto de
@@ -22,7 +23,10 @@ public class Funcionario {
     }
 
     public void setSalarioBruto(double salarioBruto) {
-        if (salarioBruto <= 0.0){
+        //Essa classe apresenta erro, pois quando o salário for 0
+        //Deve aceitar o input e não gerar Salario Negativo, portanto alteramos
+        //if (salarioBruto <= 0.0){ porif (salarioBruto < 0.0){
+        if (salarioBruto < 0.0){
             throw new IllegalArgumentException("Salario Negativo");
         }
         this.salarioBruto = salarioBruto;
@@ -40,7 +44,10 @@ public class Funcionario {
         if (this.salarioBruto <= limIRPF){
             return 0.0;
         }else{
-            return (this.salarioBruto-limIRPF*aliquotaIRPF);
+            //Aqui alteramos o return do calculo que estava sendo realizado
+            //incorretamente de acordo com a questão
+            //return (this.salarioBruto-limIRPF*aliquotaIRPF);
+            return (this.salarioBruto - limIRPF) * aliquotaIRPF;
         }
     }
 
